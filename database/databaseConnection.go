@@ -3,10 +3,11 @@ package database
 import (
 	"context"
 	"fmt"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
 	"time"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func DBInstance() *mongo.Client {
@@ -17,7 +18,7 @@ func DBInstance() *mongo.Client {
 	if err != nil {
 		log.Fatal(err)
 	}
-	context.WithTimeout(context.Background(), 10*time.Second)
+	var ctx, cancel = context.WithTimeout(context.Background(), 10*time.Second)
 
 	defer cancel()
 

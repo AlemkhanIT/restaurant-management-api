@@ -15,7 +15,7 @@ func GetUser() gin.HandlerFunc {
 
 	}
 }
-func SignUp() gin.HandlerFunc {
+func Signup() gin.HandlerFunc {
 	return func(c *gin.Context) {
 
 	}
@@ -25,9 +25,11 @@ func Login() gin.HandlerFunc {
 
 	}
 }
+
 func HashPassword(password string) string {
 
 }
+
 func VerifyPassword(userPassword string, providePassword string) (bool, string) {
 
 }
